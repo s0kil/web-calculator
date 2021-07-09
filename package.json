@@ -1,0 +1,18 @@
+{
+    "name": "web-calculator",
+    "description": "Web Based Calculator Using HTML, CSS, JavaScript",
+    "homepage": "https://github.com/s0kil/web-calculator#readme",
+    "bugs": {
+        "url": "https://github.com/s0kil/web-calculator/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/s0kil/web-calculator.git"
+    },
+    "scripts": {
+        "start": "sirv --dev --host=0.0.0.0 --port=8000 --no-logs public"
+    },
+    "devDependencies": {
+        "sirv-cli": "^1.0.12"
+    }
+}
