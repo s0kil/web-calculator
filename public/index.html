@@ -5,15 +5,37 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./index.css" />
-        <script src="./index.js" defer></script>
+        <script src="./index.js" defer type="module"></script>
         <title>Web Calculator</title>
     </head>
     <body>
         <main id="calculator-shell">
-            <section id="response-pane">4</section>
-            <section id="functions-input"></section>
-            <section id="digits-input"></section>
-            <section id="operations-input"></section>
+            <section id="calculator-response-pane">0</section>
+            <section id="calculator-functions-input">
+                <div class="calculator-item">AC</div>
+                <div class="calculator-item">+/-</div>
+                <div class="calculator-item">%</div>
+            </section>
+            <section id="calculator-digits-input">
+                <div class="calculator-item" data-digit="7">7</div>
+                <div class="calculator-item" data-digit="8">8</div>
+                <div class="calculator-item" data-digit="9">9</div>
+                <div class="calculator-item" data-digit="4">4</div>
+                <div class="calculator-item" data-digit="5">5</div>
+                <div class="calculator-item" data-digit="6">6</div>
+                <div class="calculator-item" data-digit="1">1</div>
+                <div class="calculator-item" data-digit="2">2</div>
+                <div class="calculator-item" data-digit="3">3</div>
+                <div class="calculator-item" data-digit="0">0</div>
+                <div class="calculator-item" data-digit=".">.</div>
+            </section>
+            <section id="calculator-operations-input">
+                <div class="calculator-item" data-operation="division">&#247;</div>
+                <div class="calculator-item" data-operation="multiplication">&#215;</div>
+                <div class="calculator-item" data-operation="subtraction">&#8722;</div>
+                <div class="calculator-item" data-operation="addition">&#43;</div>
+                <div class="calculator-item" data-operation="equals">&#61;</div>
+            </section>
         </main>
     </body>
 </html>

@@ -2,6 +2,7 @@
     --color-black: #242c2f;
     --color-orange: #de903d;
     --color-gray: #dddddd;
+    --color-gray-dark: #9d9d9d;
 }
 
 html,
@@ -28,16 +29,16 @@ body {
     display: grid;
     grid-gap: 4px;
     grid-template-columns: 1fr 80px;
-    grid-template-rows: 80px 60px 1fr;
+    grid-template-rows: 80px 80px 1fr;
     grid-template-areas:
         "response-pane   response-pane"
         "functions-input operations-input"
         "digits-input    operations-input";
 }
-#response-pane {
+#calculator-response-pane {
     grid-area: response-pane;
 
-    padding: 0 4px;
+    padding: 0 1rem;
     font-size: 4rem;
     vertical-align: middle;
     color: var(--color-gray);
@@ -46,21 +47,57 @@ body {
     align-items: center;
     justify-content: flex-end;
 }
-#functions-input {
+#calculator-functions-input {
     grid-area: functions-input;
 
-    color: var(--color-black);
-    background-color: var(--color-gray);
+    display: flex;
 }
-#digits-input {
+#calculator-digits-input {
     grid-area: digits-input;
 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#calculator-operations-input {
+    grid-area: operations-input;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-item {
+    flex: 1;
+    margin: 1px;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.calculator-item:hover {
+    opacity: 0.9;
+}
+.calculator-item:active {
+    transform: scale(0.9);
+}
+
+#calculator-digits-input,
+#calculator-functions-input {
+    background-color: var(--color-gray-dark);
+}
+#calculator-digits-input .calculator-item,
+#calculator-functions-input .calculator-item {
     color: var(--color-black);
     background-color: var(--color-gray);
 }
-#operations-input {
-    grid-area: operations-input;
-
+#calculator-operations-input .calculator-item {
     color: var(--color-gray);
     background-color: var(--color-orange);
+}
+
+/* Special Case: "0", Take Up 2 Grid Columns */
+#calculator-digits-input .calculator-item[data-digit="0"] {
+    grid-column-start: auto;
+    grid-column-end: span 2;
 }
