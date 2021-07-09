@@ -8,8 +8,18 @@ function renderOutput(output) {
         "+": "&#43;",
     }
 
-    document.querySelector("#calculator-response-pane").textContent =
-        String(output)
+    // Replace Arithmetic Operations With HTML Symbols
+    const formattedOutput = [...String(output)].reduce((result, character) => {
+        return (
+            result +
+            (character in operationSymbols
+                ? operationSymbols[character]
+                : character)
+        )
+    }, "")
+
+    document.querySelector("#calculator-response-pane").innerHTML =
+        formattedOutput
 }
 
 function initializeCalculator() {
@@ -53,7 +63,7 @@ function initializeCalculator() {
 
                 const command = operationsCommand[operation]
                 if (Object.values(operationsCommand).includes(lastCommand)) {
-                    // Cannot Have More Than One Operation
+                    // Cannot Have More Than One Operation In Succession
                     currentValue = currentValue.replace(
                         lastCharIsOperationRegex,
                         command,
