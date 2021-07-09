@@ -46,6 +46,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    overflow: hidden;
+    white-space: nowrap;
 }
 #calculator-functions-input {
     grid-area: functions-input;
@@ -97,7 +99,7 @@ body {
 }
 
 /* Special Case: "0", Take Up 2 Grid Columns */
-#calculator-digits-input .calculator-item[data-digit="0"] {
+#calculator-digits-input .calculator-item[data-value="0"] {
     grid-column-start: auto;
     grid-column-end: span 2;
 }
