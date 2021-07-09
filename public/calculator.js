@@ -104,6 +104,6 @@ function testSolver() {
         ])
     })
 }
-testSolver()
+// testSolver()
 
 export default { solve: solve }
