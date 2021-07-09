@@ -84,7 +84,7 @@ function testSolver() {
         { expression: "2+3-17", solution: "-12" },
         { expression: "2+3*8", solution: "26" },
         { expression: "2/0", solution: "Undefined" },
-        { expression: "20000*99999*9", solution: "Error" },
+        { expression: "20000*99999*9", solution: "17999820000" },
         {
             expression: "9*9*9*9*9*9*9*9*9*9*9*9*9*9*9*9",
             solution: "1853020188851841",
@@ -104,6 +104,6 @@ function testSolver() {
         ])
     })
 }
-// testSolver()
+testSolver()
 
 export default { solve: solve }
