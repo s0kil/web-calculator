@@ -77,8 +77,6 @@ function initializeCalculator() {
                 lastCommand = command
                 renderOutput(currentValue)
             } else {
-                if (isNaN(itemValue)) return
-
                 currentValue += itemValue
                 lastCommand = itemValue
                 renderOutput(currentValue)
