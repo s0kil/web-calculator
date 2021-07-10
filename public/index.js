@@ -37,6 +37,17 @@ function initializeCalculator() {
         calculatorItem.textContent = itemValue
 
         calculatorItem.onclick = () => {
+            if ("function" in itemDataset) {
+                const itemFunction = itemDataset.function
+                if (itemFunction === "allClear") {
+                    currentValue = ""
+                    lastCommand = null
+                    renderOutput("0")
+                }
+
+                return
+            }
+
             if ("operation" in itemDataset) {
                 // Operation Cannot Be First
                 if (!currentValue) return
